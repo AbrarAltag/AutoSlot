@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="description" content="A minimal slot list stored in Cloud Firestore." />
+    <title>AutoSlot</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="top">
+        <div>
+          <p class="eyebrow">Firestore</p>
+          <h1>AutoSlot</h1>
+        </div>
+        <button id="install" type="button" hidden>Install</button>
+      </header>
+
+      <p id="status" class="status" role="status">Connecting…</p>
+
+      <form id="slot-form">
+        <label>
+          Slot
+          <input id="title" name="title" type="text" maxlength="120" required placeholder="Team sync" />
+        </label>
+        <label>
+          When
+          <input id="when" name="when" type="datetime-local" required />
+        </label>
+        <button type="submit">Add slot</button>
+      </form>
+
+      <ul id="slots" class="slots"></ul>
+      <p id="empty" class="empty" hidden>No slots yet.</p>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
